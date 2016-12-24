@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Nightmare over in...</title>
+    <link rel="stylesheet" href="./lib/flipclock/flipclock.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">    
+    <style>
+    body {
+      background: -webkit-linear-gradient(90deg, #1C1C1C 10%, #494949 90%); 
+      background: -moz-linear-gradient(90deg, #1C1C1C 10%, #494949 90%); 
+      background: linear-gradient(90deg, #1C1C1C 10%, #494949 90%);
+    }
+    h1 {
+      font-family: 'Raleway', sans-serif;
+      color: white;
+    }
+    .main {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);    
+    }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="main">
+      <h1 align="center">This nightmare ends in...</h1>
+      <div align="center">
+        <div class="clock" style="margin:2em;" align="center"></div>
+      </div>  
+      <h1 align="center">seconds</h1>
+    </div>  
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>    
+    <script src="./lib/flipclock/flipclock.js"></script>    
+    <script src="./lib/moment/moment.js"></script>    
+    <script type="text/javascript">
+      var clock;
+
+      $(document).ready(function() {
+        clock = new FlipClock($('.clock'), moment().diff('2021-01-20T12:00:00-05:00', 'seconds')*-1, {
+          clockFace: 'Counter',
+          countdown: true,
+          autoStart: true
+        });
+      });
+    </script>
+  </body>
+</html> 
